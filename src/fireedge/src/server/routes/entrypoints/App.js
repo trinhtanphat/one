@@ -127,6 +127,8 @@ router.get('*', async (req, res) => {
     <head>
       <title>${upperCaseFirst(appName ?? 'FireEdge')} by OpenNebula</title>
       ${faviconLink}
+      <script>(function(){try{var r=localStorage.getItem('proxmoxai_prefs');var p=r?JSON.parse(r):{};var t=p.theme||'midnight';var s=p.color_scheme||'system';var lv={anthropic:'anthropic-light',v0:'vercel-light','github-dim':'github-light'};if(t==='system'){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches?'light':'midnight';}if(s==='light'&&lv[t])t=lv[t];document.documentElement.setAttribute('data-theme',t);document.documentElement.setAttribute('data-density',p.density||'comfortable');if(p.reduced_motion)document.documentElement.setAttribute('data-motion','reduced');}catch(_){}})()</script>
+      <link rel="stylesheet" href="${APP_URL}/client/theme-kit/theme.css">
       <meta name="theme-color" content="#ffffff">
       <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">

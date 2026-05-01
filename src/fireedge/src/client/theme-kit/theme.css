@@ -1,0 +1,105 @@
+/* =============================================================================
+   VNSO Theme Kit — minimal baseline
+   Drop-in CSS variables for every required theme family. Each block targets
+   html[data-theme="<id>"] and defines the canonical variable contract from
+   /root/THEME_CONTRACT.md. Premium / extra families (linear, stripe, notion,
+   figma, raycast, supabase, railway, anthropic, v0, github-dim, …) ship in
+   the full ProxmoxAI/frontend/src/themes-premium.css — link that for full
+   parity. This file is the *baseline* needed to render any VNSO app
+   correctly even before the premium pack is loaded.
+   ============================================================================= */
+
+/* ── default / midnight (dark) ─────────────────────────────────────────────── */
+html, html[data-theme="midnight"] {
+  --bg:#0b0d12; --bg-secondary:#11141b; --bg-tertiary:#171b24;
+  --card-bg:#11141b; --sidebar-bg:#0b0d12;
+  --text:#e6e8ee; --text-muted:#8a92a6;
+  --primary:#5b8def; --primary-dim:rgba(91,141,239,.12); --primary-glow:rgba(91,141,239,.45);
+  --accent:#8b5cf6; --success:#22c55e; --warning:#f59e0b; --danger:#ef4444;
+  --border:rgba(255,255,255,.08); --border-glow:rgba(91,141,239,.40);
+  --radius:8px;
+}
+
+/* ── light ─────────────────────────────────────────────────────────────────── */
+html[data-theme="light"] {
+  --bg:#ffffff; --bg-secondary:#f7f8fa; --bg-tertiary:#eef0f4;
+  --card-bg:#ffffff; --sidebar-bg:#f7f8fa;
+  --text:#0f172a; --text-muted:#64748b;
+  --primary:#2563eb; --primary-dim:rgba(37,99,235,.10); --primary-glow:rgba(37,99,235,.30);
+  --accent:#7c3aed; --success:#16a34a; --warning:#d97706; --danger:#dc2626;
+  --border:rgba(15,23,42,.10); --border-glow:rgba(37,99,235,.30);
+  --radius:8px;
+}
+
+/* ── github-dim / github-light ─────────────────────────────────────────────── */
+html[data-theme="github-dim"] {
+  --bg:#22272e; --bg-secondary:#2d333b; --bg-tertiary:#373e47;
+  --card-bg:#2d333b; --sidebar-bg:#22272e;
+  --text:#adbac7; --text-muted:#768390;
+  --primary:#539bf5; --primary-dim:rgba(83,155,245,.12); --primary-glow:rgba(83,155,245,.40);
+  --accent:#8957e5; --success:#57ab5a; --warning:#c69026; --danger:#e5534b;
+  --border:rgba(205,217,229,.10); --border-glow:rgba(83,155,245,.40);
+  --radius:6px;
+}
+html[data-theme="github-light"] {
+  --bg:#ffffff; --bg-secondary:#f6f8fa; --bg-tertiary:#eaeef2;
+  --card-bg:#ffffff; --sidebar-bg:#f6f8fa;
+  --text:#1f2328; --text-muted:#656d76;
+  --primary:#0969da; --primary-dim:rgba(9,105,218,.08); --primary-glow:rgba(9,105,218,.30);
+  --accent:#8250df; --success:#1a7f37; --warning:#bf8700; --danger:#cf222e;
+  --border:rgba(31,35,40,.15); --border-glow:rgba(9,105,218,.30);
+  --radius:6px;
+}
+
+/* ── anthropic / anthropic-light ───────────────────────────────────────────── */
+html[data-theme="anthropic"] {
+  --bg:#1f1e1d; --bg-secondary:#262422; --bg-tertiary:#2d2a27;
+  --card-bg:#262422; --sidebar-bg:#1a1918;
+  --text:#f5f3ee; --text-muted:#b3aca0;
+  --primary:#cc785c; --primary-dim:rgba(204,120,92,.14); --primary-glow:rgba(204,120,92,.45);
+  --accent:#d4926f; --success:#3ecf8e; --warning:#e8a93b; --danger:#e85e4d;
+  --border:rgba(245,243,238,.10); --border-glow:rgba(204,120,92,.42);
+  --radius:8px;
+}
+html[data-theme="anthropic-light"] {
+  --bg:#f5f3ee; --bg-secondary:#ede9e0; --bg-tertiary:#e2dccd;
+  --card-bg:#ffffff; --sidebar-bg:#1f1e1d;
+  --text:#1a1815; --text-muted:#574f44;
+  --primary:#cc785c; --primary-dim:rgba(204,120,92,.12); --primary-glow:rgba(204,120,92,.34);
+  --accent:#a85e44; --success:#1d6f3e; --warning:#a35c00; --danger:#a72020;
+  --border:rgba(31,30,29,.16); --border-glow:rgba(204,120,92,.42);
+  --radius:8px;
+}
+
+/* ── v0 / vercel-light ─────────────────────────────────────────────────────── */
+html[data-theme="v0"] {
+  --bg:#000000; --bg-secondary:#0a0a0a; --bg-tertiary:#171717;
+  --card-bg:#0a0a0a; --sidebar-bg:#000000;
+  --text:#fafafa; --text-muted:#a1a1aa;
+  --primary:#ffffff; --primary-dim:rgba(255,255,255,.08); --primary-glow:rgba(255,255,255,.30);
+  --accent:#0070f3; --success:#0070f3; --warning:#f5a623; --danger:#ee0000;
+  --border:rgba(255,255,255,.10); --border-glow:rgba(255,255,255,.30);
+  --radius:6px;
+}
+html[data-theme="vercel-light"] {
+  --bg:#ffffff; --bg-secondary:#fafafa; --bg-tertiary:#f4f4f5;
+  --card-bg:#ffffff; --sidebar-bg:#fafafa;
+  --text:#0a0a0a; --text-muted:#666666;
+  --primary:#000000; --primary-dim:rgba(0,0,0,.06); --primary-glow:rgba(0,0,0,.25);
+  --accent:#0070f3; --success:#0070f3; --warning:#f5a623; --danger:#ee0000;
+  --border:rgba(0,0,0,.10); --border-glow:rgba(0,0,0,.30);
+  --radius:6px;
+}
+
+/* ── density ───────────────────────────────────────────────────────────────── */
+html[data-density="compact"]     { --space-1:.25rem; --space-2:.5rem;  --space-3:.75rem; --space-4:1rem;   }
+html[data-density="comfortable"] { --space-1:.375rem; --space-2:.75rem; --space-3:1rem;   --space-4:1.5rem; }
+html[data-density="cozy"]        { --space-1:.5rem;   --space-2:1rem;   --space-3:1.5rem; --space-4:2rem;   }
+
+html[data-motion="reduced"] *, html[data-motion="reduced"] *::before, html[data-motion="reduced"] *::after {
+  animation-duration: .001ms !important;
+  transition-duration: .001ms !important;
+}
+
+/* ── baseline body so theme variables actually paint ───────────────────────── */
+body { background: var(--bg); color: var(--text); }
